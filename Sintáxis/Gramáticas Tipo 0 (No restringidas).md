@@ -1,0 +1,1 @@
+Al no tener restricciones, esta clase de gramáticas formales tienen una gran generalidad. Son el único tipo de gramática que puede tener producciones que generen **contracción**, es decir, la aplicación de una regla gramatical resulta en una nueva forma sentencial de una menor longitud a la original.
