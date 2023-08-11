@@ -5,4 +5,5 @@
 *.fdb_latexmk
 *.log
 *.fls
+*.aux
 !README.md
