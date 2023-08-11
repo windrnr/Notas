@@ -2,4 +2,7 @@
 .stfolder/
 .trash/
 .stversions/
+*.fdb_latexmk
+*.log
+*.fls
 !README.md

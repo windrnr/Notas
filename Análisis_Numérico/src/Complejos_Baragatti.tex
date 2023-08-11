@@ -1,20 +1,182 @@
-# Definición
-Un número complejo es un par ordenado de números reales de la forma genérica: $Z=(a,b)/a,b \in \mathbb{R}$. Ej.: $Z_1=(3,-2).$
+\documentclass[12pt, twocolumn]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{angles, arrows.meta}
+
+\titleformat*{\section}{\large\bfseries}
+
+\title{Números Complejos}
+\author{Lautaro Alejo Acosta Quintana}
+\geometry {
+    left=1.59cm,
+    right=1.58cm,
+    tmargin=1.9cm,
+    bottom=2.534cm
+}
+
+\begin{document}
+\maketitle
+\section{Definición}
+Un número complejo es un par ordenado de números reales de la forma genérica: $\boxed{Z=(a,b)/a,b \in \mathbb{R}}$. Ej.: $Z_1=(3,-2).$\\
 A diferencia de un par ordenado común, en donde $a$ y $b$ representan la abscisa y la ordenada, un número complejo $Z$ es un par ordenado en donde $a$ representa el componente real de $Z$ ($Re(Z)$)y $b$ representa al componente imaginario de $Z$ ($Im(Z)$).
 
-# Gráfico
-Para graficar un número complejo según su **par ordenado**, se marca en las abscisas la parte real, y en las ordenadas la parte imaginaria. Entonces, puede ser representado como el punto en el plano con esas coordenadas o como el vector que tiene como extremo a dicho punto.
+\section{Gráfico}
+Para graficar un número complejo según su \textbf{par ordenado}, se marca en las abscisas la parte real, y en las ordenadas la parte imaginaria. Entonces, puede ser representado como el punto en el plano con esas coordenadas o como el vector que tiene como extremo a dicho punto.
 
-# Suma de complejos
+\section{Suma de complejos}
 La suma de complejos se realiza sumando entre sí las partes reales y las partes imaginarias de cada número complejo:
-$$ (a,b) + (c,d)\underset{Df}{=}(a+c,b+d) $$
-
-# Multiplicación de complejos
+$$ \boxed{(a,b) + (c,d)\underset{Df}{=}(a+c,b+d) }$$
+\section{Multiplicción de complejos}
 El producto entre dos números complejos se obtiene de la siguiente manera:
-1. Para obtener la parte real: Se realiza una multiplicación entre las partes reales menos la multiplicación de las partes imaginarias de ambos números
-2. Para obtener la parte imaginaria: Se realiza una multiplicación de la parte real del primer número con la parte imaginaria del segundo más la multiplicación de la parte imaginaria del primero con la parte real del segundo.
-$$(a,b)\cdot(c,d) \underset{Df}{=} (a\cdot c-b\cdot d,a\cdot d + b\cdot c) $$
-> **Regla mnemotécnica:** "primera por primera menos segunda por segunda y primera por segunda más segunda por primera"
+\begin{enumerate}
+    \item Para obtener la parte real: Se realiza una multiplicación entre las partes reales menos la multiplicación de las partes imaginarias de ambos números.
+    \item Para obtener la parte imaginaria: Se realiza una multiplicación de la parte real del primer número con la parte imaginaria del segundo más la multiplicación de la parte imaginaria del primero con la parte real del segundo.
+\end{enumerate}
+$$\boxed{(a,b)\cdot(c,d) \underset{Df}{=} (a\cdot c-b\cdot d,a\cdot d + b\cdot c)}$$
+
+\begin{quote}
+    \textbf{Regla mnemotécnica:} "primera por primera menos segunda por segunda y primera por segunda más segunda por primera"
+\end{quote}
+
+Si un número complejo tiene en su parte imaginaria el valor $0$, pasa a ser un \textbf{número real}, debido a que tanto en las procesos de suma y multiplicación se comporta exactamente como uno. Ej: $$(a,0)=a$$
+En cambio, un número complejo de la forma del par ordenado $(0,1)$ es representado por la letra $i$.
+$$\boxed{(0,1))\underset{Df}{=}i}$$
+Por lo que la operación $y\cdot i$ sería equivalente a:
+$$y\cdot i = (y,0)\cdot (0,1)=(0,y)$$
+Entonces, de esta situación se desprende la siguiente observación. Si tenemos un número complejo cualquiera $(a,b)$, es posible representarlo de la siguiente manera:
+$$(a,b)=(a,0)+(0,b)=\boxed{a+bi}$$
+
+Ahora, para comprender de dónde viene la definición $i=\sqrt{-1}$ podemos hacer lo siguiente:
+$$i^{2}=i\cdot i = (0,1)\cdot (0,1) = (-1,0) = -1 $$
+$$\boxed{\therefore i = \sqrt{-1}}$$
+
+Este resultado nos permite ver que podemos definir de otra manera la \textbf{multiplicación de complejos} de la siguiente manera:
+\begin{equation*}
+    \begin{aligned}
+        & (a+bi)\cdot (c+di) = ac+adi + bci + bdi^{2}= \\
+        & \boxed{ac-bd+(ad+bc)i}
+    \end{aligned}
+\end{equation*}  
 
 
+\section{Notación Polar o Trigonométrica de complejos}
+Partiendo de la representación gráfica de un complejo en un plano cartesiano, para llegar a una notación trigonométrica o polar necesito encontrar un ángulo de inclinación del complejo o \textbf{argumento del complejo ($Z_{2}$)}. \\ 
+Para obtenerlo hay dos formas, en ambas se debe partir del eje $x$ positivo y trazar un ángulo, primero en sentido contrario a las agujas del reloj  $(\alpha)$y el segundo en sentido de las agujas del reloj $(\beta)$, hasta llegar al punto o vector que representa al complejo. \\
+Ambas alternativas quedan representadas de la siguiente manera:
+\begin{center}
+\begin{tikzpicture}
+
+% Cartesian plane
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+
+% Vector
+\draw[thick, blue, ->] (0,0) -- (-2,-2) node[above left] {$\mathbf{Z_{2}}$};
+
+% Angle
+\draw[red] (1.2,0) arc (0:220:1.2);
+\node[red] at (25:0.7) {$\alpha$};
+
+\draw[green] (1.2,0) arc (0:-130:1.2);
+\node[green] at (-30:0.7) {$\beta$};
+
+\end{tikzpicture}
+\end{center}
+
+Una vez hecho eso, se pueden obtener infinitos argumentos de la forma:
+$$arg \ Z_{2}=\alpha \pm 2\pi k$$
+
+Podemos definir el \textbf{argumento principal} como aquel con un ángulo que varía entre $\pi$ y $-\pi$.
+$$Arg \ Z_{2}=\alpha \pm 2\pi k \rightarrow -\pi\leq\alpha\leq\pi$$
+
+Ahora, si quiero escribirlo usando coordenadas polares:
+\begin{center}
+\begin{tikzpicture}
+
+% Cartesian plane
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+
+% Vector
+\draw[thick, blue, ->] (0,0) -- (-2,-2) node[above left] {$\mathbf{Z_{2}(a,b)}$} node[midway, below right]{$\mathbf{r}$};
+
+% Angle
+\draw[red] (1.2,0) arc (0:220:1.2);
+\node[red] at (25:0.7) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+donde $\left\{
+\begin{aligned}
+    &a=r\cos{\alpha}\\
+    &b=r\sin{\alpha}
+\end{aligned}
+\right.$
+
+Se puede observar que el complejo $(a,b)$ puede ser escrito en una nueva forma:
+$$(a,b)=a+bi=\boxed{r\cos{\alpha}+r\sin{\alpha}i}$$
+
+\section{Notación Exponencial}
+Una manera de demostrarlo es definiendo dos funciones de variable real a valores complejos:
+\begin{equation*}
+    \begin{aligned}
+        &f(\theta)=e^{i\theta}\\
+        &g(\theta)=\cos{\theta}+\sin{\theta}i
+    \end{aligned}
+\end{equation*}
+En donde ambas tendrán la misma condición inicial en 0:
+\begin{equation*}
+    \begin{aligned}
+        &f'(0)=1\\
+        &g'(0)=1\\
+    \end{aligned}
+\end{equation*}
+Si derivo cada una:
+\begin{equation*}
+    \begin{aligned}
+        &f'(\theta)=e^{i\theta}i\\
+        &g'(\theta)=-\sin{\theta}+\cos{\theta}i
+    \end{aligned}
+\end{equation*}
+En donde podemos observar, según el análisis hecho previamente, que la derivada de $g(\theta)$ puede re-escribirse como:
+\begin{equation*}
+    \begin{aligned}
+        &g'(\theta)=i.i\sin{\theta}+\cos{\theta}i=\\
+        &i[\cos{\theta}+\sin{\theta}i]=\\    
+        &ig(\theta)
+    \end{aligned}
+\end{equation*}  
+Entonces, podemos ver que la derivada de ambas funciones dan como resultado la misma ecuación diferencial:
+\begin{equation*}
+    \begin{aligned}
+        &f'(\theta)=if(\theta)\\
+        &g'(\theta)=ig(\theta)     
+    \end{aligned}
+\end{equation*} 
+Por lo que necesariamente son iguales:
+$$\therefore ei^{\theta}=\cos{\theta}+\sin{\theta}i$$
+Con este resultado, podemos definir el complejo $(a,b)$ en forma exponencial:
+\begin{equation*}
+    \begin{aligned}
+        (a,b)=a+bi &=r\cos{\theta}+r\sin{\theta}i=\\
+                   &=r(\cos{\theta}+\sin{\theta}i)=\\
+                   &=\boxed{re^{i\theta}}
+    \end{aligned}
+\end{equation*}
+Con esta definición, la multiplicación entre complejos se dá de la siguiente forma:
+$$Z_1\cdot Z_2=r_1 e^{i \alpha_1}\cdot r_2 e^{i \alpha_2}=r_1 r_2 e^{i(\alpha_1+\alpha_2}$$
+Un ejemplo podría ser:
+$$(r e^{i\theta})^{\frac{1}{2}}=(r e^{i(\theta+2\pi k)})^{\frac{1}{2}}=r^{\frac{1}{2}}e^{i(\frac{\theta}{2}+\pi k)}$$
+En donde si al resultado anterior a la variable $k$ le damos el valor 0 y el valor 1:
+\begin{equation*}
+    \begin{aligned}
+        &\sqrt{n}e^{i(\frac{\theta}{2})}\\
+        &\sqrt{n}e^{i(\frac{\theta}{2}+\pi)}
+    \end{aligned}
+\end{equation*}
+\end{document}
 
