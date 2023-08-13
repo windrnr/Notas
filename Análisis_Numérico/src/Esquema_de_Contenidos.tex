@@ -1,0 +1,104 @@
+\documentclass[12pt, twocolumn]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{}
+\geometry {
+    left=1.59cm,
+    right=1.58cm,
+    tmargin=1.9cm,
+    bottom=2.534cm
+}
+\begin{document}
+% TITLEPAGE
+%///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{titlepage}
+\centering
+{\includegraphics[width=0.2\textwidth]{../../utnlogo.png}\par}
+\vspace{1cm}
+{\bfseries\LARGE Ingeniería en Sistemas de Información\par}
+\vspace{0.5cm}
+{\bfseries\LARGE Universidad Tecnológica Nacional\par}
+\vspace{1cm}
+{\scshape\Large Facultad Regional Resistencia \par}
+\vspace{1cm}
+{\scshape\Huge Análisis Numérico \par}
+\vspace{1cm}
+{\itshape\Large Previa 1: Conceptos de Complejos\par}
+\vspace{1cm}
+\vfill
+{\Large Profesores:\par}
+{\Large Ing. García Claudia, Roxana \par}
+{\Large Nápoles Valdés, Juan \par}
+\vfill
+{\Large Alumnos:\par}
+{\Large Acosta Quintana, Lautaro \par}
+{\Large Guzmán, Tomás \par}
+{\Large Rosín, Zaira \par}
+{\Large Stegmayer, Tobías \par}
+\vfill
+{\Large Agosto 2023\par}
+\end{titlepage}
+%///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\textbf{\Large Números Complejos}
+\begin{enumerate}
+    \item \textbf{Definición}
+        \begin{itemize}
+            \item Par ordenado de números reales de la forma genérica: $\boxed{Z=(a,b)/a,b\in\mathbb{R}}$.
+            \item $a$ represente al componente real de Z($Re(Z)$) y $b$ representa al componente imaginario de $Z$ ($Im(Z)$).
+            \item Pueden ser representados en un plano como un punto o el vector que tiene como extremo a dicho punto.
+        \end{itemize}
+    \item \textbf{Suma de Complejos}
+        \begin{itemize}
+            \item Se suman entre sí las partes reales y las partes imaginarias, tal como se hace con los vectores:
+                $$ \boxed{(a,b) + (c,d)\underset{Df}{=}(a+c,b+d) }$$
+        \end{itemize}
+    \item \textbf{Multiplicación de Complejos} 
+        $$\boxed{(a,b)\cdot(c,d) \underset{Df}{=} (a\cdot c-b\cdot d,a\cdot d + b\cdot c)}$$
+    \item \textbf{Complejos de la forma $(a,0)=a$}
+    \item \textbf{Complejo $\boxed{i\underset{Df}{=}(0,1)}$}
+        \begin{itemize}
+            \item Si tenemos un número complejo cualquiera $(a,b)$, es posible representarlo de la siguiente manera:
+                $$(a,b)=(a,0)+(0,b)=\boxed{a+bi}$$
+            \item $i^{2}=i\cdot i = (0,1)\cdot (0,1) = (-1,0) = -1 $
+            \item \textbf{La multiplicación de Complejos} podrá escribirse como:
+                \begin{equation*}
+                    \begin{aligned}
+        & (a+bi)\cdot (c+di) = ac+adi + bci + bdi^{2}\\
+        & =\boxed{ac-bd+(ad+bc)i}
+                    \end{aligned}
+                \end{equation*}
+        \end{itemize}
+    \item \textbf{Notación Polar o Trigonométrica}
+        \begin{itemize}
+            \item El ángulo comprendido entre el eje real positivo del plano complejo y la línea que une $Z$ con el origen de dicho plano se denomina \textbf{argumento del complejo $\alpha$}.
+            \item $arg \ Z=\alpha \pm 2\pi k$
+            \item \textbf{Argumento principal} es aquel que varía entre $\pi$ y $-\pi$: $$Arg \ Z=\alpha \pm 2\pi k \Leftrightarrow -\pi\leq\alpha\leq\pi$$
+            \item El complejo $(a,b)$ puede ser escrito en forma:
+$(a,b)=a+bi=\boxed{r\cos{\alpha}+r\sin{\alpha}i}$
+        \end{itemize}
+    \item \textbf{Notación Exponencial}
+        \begin{itemize}
+            \item $ei^{\theta}=\cos{\theta}+\sin{\theta}i \Rightarrow\\
+            (a,b)=a+bi =r\cos{\theta}+r\sin{\theta}i=
+                        r(\cos{\theta}+\sin{\theta}i)=
+                   \boxed{re^{i\theta}}$
+        \end{itemize}
+   \item \textbf{Bibliografía}:
+\begin{itemize}
+    \item \href{https://www.youtube.com/watch?v=5FemcGdN3Xw}{\small El Traductor de Ingeniería. (23 de mayo de 2017). NÚMEROS COMPLEJOS: Lic. María Inés Baragatti - Parte 1 | Docentes Apasionadxs 2017 [Archivo de Vídeo]. Youtube.}
+    \item \href{https://www.youtube.com/watch?v=f7iOdIaourk}{\small El Traductor de Ingeniería. (24 de mayo de 2017). NÚMEROS COMPLEJOS: Lic. María Inés Baragatti - Parte 2 | Docentes Apasionadxs 2017 [Archivo de Vídeo]. Youtube.}
+\end{itemize}
+\end{enumerate}
+\end{document}
+
