@@ -1,4 +1,6 @@
 .obsidian/
+*.synctex.gz
+*.out
 .stfolder/
 .trash/
 .stversions/
