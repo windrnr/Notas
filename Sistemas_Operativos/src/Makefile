@@ -1,7 +1,7 @@
 
 
 
-all:
+all: memoria introducción
 
 memoria:
 	latexmk -pdf -auxdir=./ -outdir=../ Gestión_de_la_Memoria.tex
