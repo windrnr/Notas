@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage[spanish,es-noshorthands]{babel}
+
+\title{Sistemas Operativos\\\ Introducción a las Computadoras}
+\author{Lautaro Alejo Acosta Quintana}
+\geometry {
+    left=1.59cm,
+    right=1.58cm,
+    tmargin=1.9cm,
+    bottom=2.534cm
+}
+
+\begin{document}
+    \maketitle
+    \section{Elementos Básicos}
+    Al más alto nivel hay cuatro elementos estructurales principales, interconectados entre sí, para que se logre ejecutar programas:
+    \begin{itemize}
+        \item \textbf{Procesador:} Controla el funcionamiento del computador y realiza sus funciones de procesamiento de datos.
+    \item \textbf{Memoria principal:} Almacena datos y programas. Esta memoria es habitualmente \textbf{volátil}. Se la denomina también \textit{memoria real} o \textit{memoria primaria}.
+\item \textbf{Módulo de E/S:} Transfieren los datos entre el computador y su entorno externo, conformado por diversos dispositivos (discos, equipos de comunicación y terminales).
+    \item \textbf{Bús del Sistemas:}Proporciona comunicación entre los procesadores, la memoria principal y los módulos de E/S.
+    \end{itemize}
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{elementosbásicos.jpeg}\par
+    \caption{Componentes de un computador al más alto nivel}
+\end{figure}
+
+    Una de las funciones del procesador es el intercambio de datos con la memoria. Para este fín, se utulizan dos registros internos: registro de dirección de memoria (RDIM), que especifica la dirección de lña siguiente lectura o escritura; y un registro ded atos de memoria (RDAM), que continene los datos que se vana  escribir en la memoria o que recibe los datos leídos de la memoria. De manera similar, un registro de dirección de E/S (RDIE/S) especifíca un determinado dispositivo de E/S, y un registro de datos de E/S (RDAE/S) permite el intercambio ded atos entre un módulo de E/S y el procesador. \\ 
+    Un módulo de memoria consta de un conjunto de posiciones definidas mediantes direcciones numeradas secuencialmente. Cada posición contiene un patrón de bits que se puede interpretar como una instrucción o como datos. Un módulo de E/S transfiere datos desde los dispositivos externos hacia el procesador y la memoria, y viceversa. Contiene \textit{buffers} que mantienen temporalmente los datos hasta que se puedan enviar.
+
+\section{Registros del Procesador}
+Un procesador icnluye un conjunto de registros que proporcionan un tipo de memoria que es más rápida y de menor capacidad que la memoria principal. los registro del procesador sirven para dos funciones:
+\begin{itemize}
+    \item \textbf{Registros visibles para el usuario:} Premiten al programador minimizar las referencia a memoria principal optimizando el uso de registros.
+    \item \textbf{Registros de control y estado:} Usados por el procesador para controlar su operación y por rutinas privilegiadas del sistema opearativo para controlar la ejecución de programas.
+\end{itemize}
+\begin{tcolorbox}[colback=cyan!10, colframe=blue!70, title=Nota]
+No hay una clasificación nítida de los registros entre estas dos categorías pero son convenientes de usar
+\end{tcolorbox}
+
+
+\end{document}
