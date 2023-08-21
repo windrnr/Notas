@@ -182,7 +182,28 @@ Supóngase que la memoria principal se divide en porciones de tamaño fijo relat
     \includegraphics[width=15cm]{marco.png}
     \caption{Asignación de páginas de proceso a marcos libres}
 \end{figure}
-La figura 7 ilustra el uso de páginas y marcos. En un momento dado, los marcos de la memoria están en uso y algunos están libres. El sistema operativo mantiene una lista de marcos libres. El proceso A, almacenado en disco, está formado por cuatro páginas. En el momento de cargar este proceso, el sistema operativo encuentra cuatro marcos libres y carga las cuatro páginas del proceso A en dichos marcos (Figura 7.b). El proceso B, formado por tres páginas, y el proceso C, formado por cuatro páginas, se cargan a continuación. En ese momento, el proceso B se suspende y deja la memoria principal. Posteriormente, todos los procesos de la memoria principal se bloquean, y el sistema operativo necesita traer un nuevo proceso, el proceso D, que está formado por cinco páginas.
+La figura 7 ilustra el uso de páginas y marcos. En un momento dado, los marcos de la memoria están en uso y algunos están libres. El sistema operativo mantiene una lista de marcos libres. El proceso A, almacenado en disco, está formado por cuatro páginas. En el momento de cargar este proceso, el sistema operativo encuentra cuatro marcos libres y carga las cuatro páginas del proceso A en dichos marcos (Figura 7.b). El proceso B, formado por tres páginas, y el proceso C, formado por cuatro páginas, se cargan a continuación. En ese momento, el proceso B se suspende y deja la memoria principal. Posteriormente, todos los procesos de la memoria principal se bloquean, y el sistema operativo necesita traer un nuevo proceso, el proceso D, que está formado por cinco páginas. \\\\ 
+Suponiendo que no hubiera suficientes marcos contiguos sin utilizar para ubicar un proceso, esto no evitaría que el sistema operativo cargara el proceso D, debido a que el sistema operativo mantiene una \textbf{tabla de páginas} por cada proceso. La tabla de páginas muestra la ubicación del marco por cada página del proceso. Dentro del programa, cada dirección lógica está formada por un número de página y un desplazamiento dentro de la página.\\\\
+Con esta paginación, la traducción de direcciones lógicas a físicas las realiza también el hardware del procesador. Para ello, el procesador utiliza la tabla de páginas para producir, a partir de una dirección lógica(número de página, desplazamiento), una dirección física (número de marco, desplazamiento).\\\\ 
+Adicionalmente, el sistema operativo mantiene una única lista de marcos libres de todos los marcos de la memoria que se encuentran actualmente no ocupados y disponibles para las páginas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{paginación2.png}
+    \caption{Estructuras de datos para el ejemplo de la Figura 7 en el instante (f)}
+\end{figure}
+
+\section{Segmentación}
+Un programa de usuarios puede subdividirse utilizando segmentación, en el cual el programa y sus datos asociados se dividen en un número de \textbf{segmentos}. No se requiere que todos los programas sean de la misma longitud, aunque hay una longitud máxima de segmento. Al igual que en el caso de la paginación, una dirección lógica estará compuesta por un número de segmento y un desplazamiento.\\\\ 
+Debido al uso de segmentos de distinto tamaño, la segmentación es similar al particionamiento dinámico. En la ausencia de un esquema de \textit{overlays} o el uso de la memoria virtual, se necesitaría que todos los segmentos de un programa se cargaran en la memoria para su ejecución. La diferencia, comparada con el particionamiento dinámico, es que con la segmentación un programa podría ocupar más de una partición, y estas particiones no necesitan ser contiguas. La segmentación eliminar la fragmentación interna pero, al igual que el particionamiento dinámico, sufre de fragmentación externa. \\\\ 
+Mientras que la paginación es invisible al programador, la segmentación es normalmente visible y se proporciona como una utilidad para organizar programas y datos. El inconveniente principal de este servicio es que el programador debe ser consciente de la limitación de tamaño de segmento máximo. \\\\ 
+Otra consecuencia de utilizar segmentos de distinto tamaño es que no hay una relación simple entre direcciones lógicas y direcciones físicas. De forma análoga a la paginación, un esquema de segmentación sencillo haría uso de una tabla de segmentos por cada proceso y una lista de bloques libre de memoria principal. Cada entrada de la tabla de segmentos tendría que proporcionar la dirección inicial de la memoria principal del correspondiente segmento. La entrada también debería proporcionar la longitud del segmento, para asegurar que no se utilizan direcciones no válidas. \\\\ 
+Con la segmentación simple, un proceso se divide en un conjunto de segmentos que no tienen que ser del mismo tamaño. Cuando un proceso se trae a memoria, todos sus segmentos se cargan en regiones de memoria disponibles, y se crea la tabla de segmentos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{segmentacion.png}
+    \caption{Ejemplos de traducción de direcciones lógicas a físicas.}
+\end{figure}
+
 
 \section {Bibliografía}
 \begin{itemize}

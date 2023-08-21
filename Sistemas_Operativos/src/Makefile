@@ -1,11 +1,11 @@
 
+all: memoria procesos introducción
 
-
-all: memoria introducción
+procesos:
+	latexmk -pdf -auxdir=./ -outdir=../ Procesos.tex
 
 memoria:
 	latexmk -pdf -auxdir=./ -outdir=../ Gestión_de_la_Memoria.tex
-
 introducción:
 	latexmk -pdf -auxdir=./ -outdir=../ Introducción.tex
 
