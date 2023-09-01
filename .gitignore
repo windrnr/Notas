@@ -12,4 +12,5 @@
 *.idx
 *.ind
 *.toc
+*.tex
 !README.md

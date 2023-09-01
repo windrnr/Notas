@@ -1,5 +1,9 @@
 all: baragatti esquema_complejos caratula
 
+portafolio1:
+	latexmk -pdf -auxdir=./ -outdir=../ Portafolio N°1.tex
+practica:
+	latexmk -pdf -auxdir=./ -outdir=../ practica.tex
 caratula:
 	latexmk -pdf -auxdir=./ -outdir=../ caratula.tex
 baragatti:
